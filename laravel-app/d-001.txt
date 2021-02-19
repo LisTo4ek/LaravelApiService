@@ -1,0 +1,116 @@
+
+
+### 2021-02-19 19:16:59 - /var/www/app/Jobs/ProcessRequestJob.php:51
+array (
+  '$requestDto' => 
+  App\Support\RequestDto::__set_state(array(
+     'method' => 'GET',
+     'uri' => 'https://cars-master.contentanalyticsinc.com/asdasdasd',
+     'headers' => 
+    array (
+      'q' => '2',
+    ),
+     'params' => 
+    array (
+      'cookie' => 
+      array (
+        0 => 'XSRF-TOKEN=eyJpdiI6Im96ekZHK3VkWVRKQXpvNEtIbGxhQUE9PSIsInZhbHVlIjoianhMTWpwWUJMWEw1b3EyL1VmNVpuUzNIdkFyTkdRaUlNLzBPRXJKODZ4MkgvbXRjZDU5TE5mY0hKQnF3WHhvZ2hiVjhCQVNlbFhyWlloa2JSWWxQa3cyNVE5K09MSm10NzZIbEVEaUh5Z1NyMmJKcHhlNDk0Vk40VHFhVTNwOE4iLCJtYWMiOiJkNzk3NmNlYjAyNjcwNGUwMDk5OTlkNzM4YTU0OWIxZmMwN2YyNGJmYzRlNTcwYjRjYWM2NTRmMjA2ZDdiNzQxIn0%3D; laravel_session=eyJpdiI6InJPdjFsVEx5MFppc3IxaFNSenJ2SlE9PSIsInZhbHVlIjoiMllJUUozQ3hJMzJIWEdvUVlsRW8vbllTZ01sSEpWcFJBVXhrTm1sK0h3SEVTaVVVek9HMjRRZWEwVDdyK2lBZzMxTGhIcC9mTmVUNndTcmpSekVXU2RTYVB0MUFNZU1HeXBvT1d2RzlzTXEzbm1vQnVEeGxhNDg2SElILzFWdXMiLCJtYWMiOiIwNmI3MmFiODIzNWVjZjUxMTRmOWZkNDI1NzNlMTJhYTZhMTUwM2U1Yjc0MjMxMTA3MmM5N2Y0MWY4NDUxMzc4In0%3D',
+      ),
+      'connection' => 
+      array (
+        0 => 'keep-alive',
+      ),
+      'accept-encoding' => 
+      array (
+        0 => 'gzip, deflate, br',
+      ),
+      'host' => 
+      array (
+        0 => '0.0.0.0:8083',
+      ),
+      'postman-token' => 
+      array (
+        0 => 'd618a799-f87a-4753-9b3d-475695bcd0ad',
+      ),
+      'accept' => 
+      array (
+        0 => '*/*',
+      ),
+      'user-agent' => 
+      array (
+        0 => 'PostmanRuntime/7.26.8',
+      ),
+      'content-length' => 
+      array (
+        0 => '',
+      ),
+      'content-type' => 
+      array (
+        0 => '',
+      ),
+    ),
+     'ips' => 
+    array (
+      0 => '172.23.0.1',
+    ),
+  )),
+  '$this->job' => 4,
+)
+
+### 2021-02-19 19:29:32 - /var/www/app/Jobs/ProcessRequestJob.php:52
+array (
+  '$requestDto' => 
+  App\Support\RequestDto::__set_state(array(
+     'method' => 'GET',
+     'uri' => 'https://cars-master.contentanalyticsinc.com/asdasdasd',
+     'headers' => 
+    array (
+      'q' => '2',
+    ),
+     'params' => 
+    array (
+      'cookie' => 
+      array (
+        0 => 'XSRF-TOKEN=eyJpdiI6IjJHNXpqRXFHTHJPNFhvYjhRRi80eEE9PSIsInZhbHVlIjoiYk9ocEYrbDJPeGM4Z0J0RkdTWTM1YnRKbUl4NXRnS0prcHY4N1BlbEhyeHhVeHlhcUd6WDBhNy9tT3M0eFlkNTlhSTVjdE5WenhmemFLa1dETkVxYzZnaFZHQmM0N2tDaHRZazVLemdoYTZMd0xxZDh0ZjBidkpkaXAyRDRwcFgiLCJtYWMiOiIzZjhhOTc3ZjllNWUwNjdlMTE4ZTFjNTQ5NjAyZTk0NzE2MDkyOTZiY2EyZDIyYTY5M2VkMzMwYzFkODAxNTIxIn0%3D; laravel_session=eyJpdiI6IkpQMEpDaUtscG5YRHlUQkNqY1RmVVE9PSIsInZhbHVlIjoib2VSa3RvMmVCanRZdmtGanMyUGk3ekZhcHByRnZvS1g3Nm8wSzVrUVl0ZXMrdGNkNGZyNnVWVi9ldWJwMkVRaW4vbklXdGtKMmNUYnRldzdPMWx0cHZ3TG1vMFc5UEptY0l2aWRNaTQ2NXJKdHR3QzZCNFdmdVV4UTE4empNdVciLCJtYWMiOiI4ZmZhMGU4ODQyNDA0YjVlMDM2ODZmNDRmMzg4M2QyYTg3NzNjZDlhZWFiZmI1NzM2N2Y1NzRjYjNmOTkzMTFiIn0%3D',
+      ),
+      'connection' => 
+      array (
+        0 => 'keep-alive',
+      ),
+      'accept-encoding' => 
+      array (
+        0 => 'gzip, deflate, br',
+      ),
+      'host' => 
+      array (
+        0 => '0.0.0.0:8083',
+      ),
+      'postman-token' => 
+      array (
+        0 => 'c3297bbf-b4cd-4f9b-9840-708d1d419f61',
+      ),
+      'accept' => 
+      array (
+        0 => '*/*',
+      ),
+      'user-agent' => 
+      array (
+        0 => 'PostmanRuntime/7.26.8',
+      ),
+      'content-length' => 
+      array (
+        0 => '',
+      ),
+      'content-type' => 
+      array (
+        0 => '',
+      ),
+    ),
+     'ips' => 
+    array (
+      0 => '172.23.0.1',
+    ),
+  )),
+  '$this->job' => 1,
+  '$this->getJobStatusId();' => 1,
+)

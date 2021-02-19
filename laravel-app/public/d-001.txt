@@ -1,0 +1,244 @@
+
+
+### 2021-02-19 18:29:39 - /var/www/app/Http/Controllers/RequestController.php:87
+array (
+  'code' => 200,
+  'body' => 
+  GuzzleHttp\Psr7\Stream::__set_state(array(
+     'stream' => NULL,
+     'size' => NULL,
+     'seekable' => true,
+     'readable' => true,
+     'writable' => true,
+     'uri' => 'php://temp',
+     'customMetadata' => 
+    array (
+    ),
+  )),
+  'headers' => 
+  array (
+    'Server' => 
+    array (
+      0 => 'nginx/1.15.6',
+    ),
+    'Date' => 
+    array (
+      0 => 'Fri, 19 Feb 2021 18:29:39 GMT',
+    ),
+    'Content-Type' => 
+    array (
+      0 => 'text/html; charset=UTF-8',
+    ),
+    'Transfer-Encoding' => 
+    array (
+      0 => 'chunked',
+    ),
+    'Connection' => 
+    array (
+      0 => 'keep-alive',
+    ),
+    'Vary' => 
+    array (
+      0 => 'Accept-Encoding',
+      1 => 'Accept-Encoding',
+    ),
+    'X-Powered-By' => 
+    array (
+      0 => 'PHP/7.3.27',
+    ),
+    'Access-Control-Allow-Methods' => 
+    array (
+      0 => 'POST, GET',
+    ),
+    'Access-Control-Allow-Headers' => 
+    array (
+      0 => 'Authorization, content-type',
+    ),
+    'Access-Control-Allow-Origin' => 
+    array (
+      0 => 'https://swagger.contentanalyticsinc.com',
+    ),
+    'Set-Cookie' => 
+    array (
+      0 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22a407965147cb58291d00d5d45e5c9c3a%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22100.96.130.5%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759379%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D58692c487be0a55cf3c27f0330b32ba71e5fcd73; expires=Wed, 24-Feb-2021 18:29:39 GMT; Max-Age=432000; path=/',
+      1 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22a407965147cb58291d00d5d45e5c9c3a%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22100.96.130.5%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759379%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D58692c487be0a55cf3c27f0330b32ba71e5fcd73; expires=Wed, 24-Feb-2021 18:29:39 GMT; Max-Age=432000; path=/',
+      2 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22a407965147cb58291d00d5d45e5c9c3a%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22100.96.130.5%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759379%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D58692c487be0a55cf3c27f0330b32ba71e5fcd73; expires=Wed, 24-Feb-2021 18:29:39 GMT; Max-Age=432000; path=/',
+      3 => 'ci_session=a%3A6%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22a407965147cb58291d00d5d45e5c9c3a%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22100.96.130.5%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759379%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3Bs%3A34%3A%22flash%3Anew%3Aprevious_controller_name%22%3Bs%3A4%3A%22auth%22%3B%7D5b60a7c82071865630f4b67404a35919bdad0ba2; expires=Wed, 24-Feb-2021 18:29:39 GMT; Max-Age=432000; path=/',
+      4 => 'ci_session=a%3A7%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%22a407965147cb58291d00d5d45e5c9c3a%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A12%3A%22100.96.130.5%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759379%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3Bs%3A34%3A%22flash%3Anew%3Aprevious_controller_name%22%3Bs%3A4%3A%22auth%22%3Bs%3A30%3A%22flash%3Anew%3Aprevious_action_name%22%3Bs%3A5%3A%22login%22%3B%7Da0681a14d1fc855bae2574cb10e497e11c8848d7; expires=Wed, 24-Feb-2021 18:29:39 GMT; Max-Age=432000; path=/',
+    ),
+    'X-CAI-Cache' => 
+    array (
+      0 => 'cached=false, reason=disabled',
+    ),
+    'Cache-Control' => 
+    array (
+      0 => 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
+    ),
+    'Strict-Transport-Security' => 
+    array (
+      0 => 'max-age=15724800; includeSubDomains',
+    ),
+  ),
+)
+
+### 2021-02-19 18:30:24 - /var/www/app/Http/Controllers/RequestController.php:87
+array (
+  'code' => 200,
+  'body' => 
+  GuzzleHttp\Psr7\Stream::__set_state(array(
+     'stream' => NULL,
+     'size' => NULL,
+     'seekable' => true,
+     'readable' => true,
+     'writable' => true,
+     'uri' => 'php://temp',
+     'customMetadata' => 
+    array (
+    ),
+  )),
+  'headers' => 
+  array (
+    'Server' => 
+    array (
+      0 => 'nginx/1.15.6',
+    ),
+    'Date' => 
+    array (
+      0 => 'Fri, 19 Feb 2021 18:30:24 GMT',
+    ),
+    'Content-Type' => 
+    array (
+      0 => 'text/html; charset=UTF-8',
+    ),
+    'Transfer-Encoding' => 
+    array (
+      0 => 'chunked',
+    ),
+    'Connection' => 
+    array (
+      0 => 'keep-alive',
+    ),
+    'Vary' => 
+    array (
+      0 => 'Accept-Encoding',
+      1 => 'Accept-Encoding',
+    ),
+    'X-Powered-By' => 
+    array (
+      0 => 'PHP/7.3.27',
+    ),
+    'Access-Control-Allow-Methods' => 
+    array (
+      0 => 'POST, GET',
+    ),
+    'Access-Control-Allow-Headers' => 
+    array (
+      0 => 'Authorization, content-type',
+    ),
+    'Access-Control-Allow-Origin' => 
+    array (
+      0 => 'https://swagger.contentanalyticsinc.com',
+    ),
+    'Set-Cookie' => 
+    array (
+      0 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2267ab7667316f55a761ec5d5051dd0761%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759424%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D9aa2a86814e3210b5f849784ef2a77fbfccb86e3; expires=Wed, 24-Feb-2021 18:30:24 GMT; Max-Age=432000; path=/',
+      1 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2267ab7667316f55a761ec5d5051dd0761%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759424%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D9aa2a86814e3210b5f849784ef2a77fbfccb86e3; expires=Wed, 24-Feb-2021 18:30:24 GMT; Max-Age=432000; path=/',
+      2 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2267ab7667316f55a761ec5d5051dd0761%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759424%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7D9aa2a86814e3210b5f849784ef2a77fbfccb86e3; expires=Wed, 24-Feb-2021 18:30:24 GMT; Max-Age=432000; path=/',
+      3 => 'ci_session=a%3A6%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2267ab7667316f55a761ec5d5051dd0761%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759424%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3Bs%3A34%3A%22flash%3Anew%3Aprevious_controller_name%22%3Bs%3A4%3A%22auth%22%3B%7D4a8f9387b3ab19b09afaca6b258c56c85d510d8a; expires=Wed, 24-Feb-2021 18:30:24 GMT; Max-Age=432000; path=/',
+      4 => 'ci_session=a%3A7%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2267ab7667316f55a761ec5d5051dd0761%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759424%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3Bs%3A34%3A%22flash%3Anew%3Aprevious_controller_name%22%3Bs%3A4%3A%22auth%22%3Bs%3A30%3A%22flash%3Anew%3Aprevious_action_name%22%3Bs%3A5%3A%22login%22%3B%7Dc7f658376656a666b0045c45652bec32c010f2bc; expires=Wed, 24-Feb-2021 18:30:24 GMT; Max-Age=432000; path=/',
+    ),
+    'X-CAI-Cache' => 
+    array (
+      0 => 'cached=false, reason=disabled',
+    ),
+    'Cache-Control' => 
+    array (
+      0 => 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
+    ),
+    'Strict-Transport-Security' => 
+    array (
+      0 => 'max-age=15724800; includeSubDomains',
+    ),
+  ),
+)
+
+### 2021-02-19 18:31:45 - /var/www/app/Http/Controllers/RequestController.php:90
+array (
+  'code' => 200,
+  'body' => 
+  GuzzleHttp\Psr7\Stream::__set_state(array(
+     'stream' => NULL,
+     'size' => NULL,
+     'seekable' => true,
+     'readable' => true,
+     'writable' => true,
+     'uri' => 'php://temp',
+     'customMetadata' => 
+    array (
+    ),
+  )),
+  'headers' => 
+  array (
+    'Server' => 
+    array (
+      0 => 'nginx/1.15.6',
+    ),
+    'Date' => 
+    array (
+      0 => 'Fri, 19 Feb 2021 18:31:45 GMT',
+    ),
+    'Content-Type' => 
+    array (
+      0 => 'text/html; charset=UTF-8',
+    ),
+    'Transfer-Encoding' => 
+    array (
+      0 => 'chunked',
+    ),
+    'Connection' => 
+    array (
+      0 => 'keep-alive',
+    ),
+    'Vary' => 
+    array (
+      0 => 'Accept-Encoding',
+      1 => 'Accept-Encoding',
+    ),
+    'X-Powered-By' => 
+    array (
+      0 => 'PHP/7.3.27',
+    ),
+    'Access-Control-Allow-Methods' => 
+    array (
+      0 => 'POST, GET',
+    ),
+    'Access-Control-Allow-Headers' => 
+    array (
+      0 => 'Authorization, content-type',
+    ),
+    'Access-Control-Allow-Origin' => 
+    array (
+      0 => 'https://swagger.contentanalyticsinc.com',
+    ),
+    'Set-Cookie' => 
+    array (
+      0 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2278ea6274befc6df092a38888faaf0446%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759505%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Da6a616ea26672fe24feb5258ff6bb349c49c4ee4; expires=Wed, 24-Feb-2021 18:31:45 GMT; Max-Age=432000; path=/',
+      1 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2278ea6274befc6df092a38888faaf0446%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759505%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Da6a616ea26672fe24feb5258ff6bb349c49c4ee4; expires=Wed, 24-Feb-2021 18:31:45 GMT; Max-Age=432000; path=/',
+      2 => 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2278ea6274befc6df092a38888faaf0446%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759505%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Da6a616ea26672fe24feb5258ff6bb349c49c4ee4; expires=Wed, 24-Feb-2021 18:31:45 GMT; Max-Age=432000; path=/',
+      3 => 'ci_session=a%3A6%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2278ea6274befc6df092a38888faaf0446%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759505%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3Bs%3A34%3A%22flash%3Anew%3Aprevious_controller_name%22%3Bs%3A4%3A%22auth%22%3B%7D06d68d212fd791deba74f44745bc2d62797fce50; expires=Wed, 24-Feb-2021 18:31:45 GMT; Max-Age=432000; path=/',
+      4 => 'ci_session=a%3A7%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%2278ea6274befc6df092a38888faaf0446%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22100.96.45.8%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A12%3A%22GuzzleHttp%2F7%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1613759505%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3Bs%3A34%3A%22flash%3Anew%3Aprevious_controller_name%22%3Bs%3A4%3A%22auth%22%3Bs%3A30%3A%22flash%3Anew%3Aprevious_action_name%22%3Bs%3A5%3A%22login%22%3B%7D2dc560852351c8eacfe850b9929c466f75bd2d32; expires=Wed, 24-Feb-2021 18:31:45 GMT; Max-Age=432000; path=/',
+    ),
+    'X-CAI-Cache' => 
+    array (
+      0 => 'cached=false, reason=disabled',
+    ),
+    'Cache-Control' => 
+    array (
+      0 => 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0',
+    ),
+    'Strict-Transport-Security' => 
+    array (
+      0 => 'max-age=15724800; includeSubDomains',
+    ),
+  ),
+)
