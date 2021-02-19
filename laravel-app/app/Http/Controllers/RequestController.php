@@ -52,27 +52,4 @@ class RequestController extends Controller
 
         return response()->json($result);
     }
-
-    /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
-     */
-    public function testOk()
-    {
-        $responseModel = new Response();
-        $responseModel->job_status_id = 1;
-        $responseModel->response = [
-            'statusCode' => 222,
-            'body' => [],
-            'headers' => ['a' => 1],
-        ];
-
-        $responseModel->save();
-
-
-       foreach (Response::all() as $flight) {
-            dump( $flight->response);
-        }
-
-        return response('ok');
-    }
 }
