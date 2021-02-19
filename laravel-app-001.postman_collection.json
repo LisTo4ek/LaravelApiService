@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "04ad5f1f-7ad7-4219-bc2e-15a4818ba4ac",
+		"name": "laravel-app-001",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://0.0.0.0:8083/process/https://cars-master.contentanalyticsinc.com/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:8083/process/https://cars-master.contentanalyticsinc.com/",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8083",
+					"path": [
+						"process",
+						"https:",
+						"",
+						"cars-master.contentanalyticsinc.com",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8083/status/5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:8083/status/5",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8083",
+					"path": [
+						"status",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
