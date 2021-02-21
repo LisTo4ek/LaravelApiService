@@ -1,27 +1,38 @@
 <?php
 
 
-namespace App\Support;
+namespace App\Support\Dto;
 
+/**
+ * Class RequestDto
+ * @package App\Support\Dto
+ */
 class RequestDto extends SimpleDataTransferObject
 {
+    /**
+     * @var string
+     */
     public string $method;
+
+    /**
+     * @var string
+     */
     public string $uri;
+
+    /**
+     * @var array
+     */
     public array $headers;
+
+    /**
+     * @var array
+     */
     public array $params;
+
+    /**
+     * @var array
+     */
     public array $ips;
-
-
-    public static function fromArray(array $params)
-    {
-        return new self([
-            'method' => $params['method'],
-            'uri' => $params['uri'],
-            'headers' => $params['headers'],
-            'params' => $params['params'],
-            'ips' => $params['ips'],
-        ]);
-    }
 
     /**
      * @return string

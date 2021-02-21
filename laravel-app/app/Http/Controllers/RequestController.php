@@ -2,18 +2,21 @@
 
 
 namespace App\Http\Controllers;
-use App\Models\Status;
-use App\Support\RequestDto;
-use Illuminate\Http\Request;
-use App\Jobs\ProcessRequestJob;
 
-use App\Models\Response;
+use App\Jobs\ProcessRequestJob;
+use App\Models\Response as ResponseModel;
+use App\Models\Status as StatusModel;
+use App\Support\Dto\RequestDto;
+use Illuminate\Http\Request;
 
 class RequestController extends Controller
 {
     /**
+     * Save request as a job
+     *
      * @param string $uri
      * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function process(string $uri, Request $request)
     {
@@ -32,23 +35,24 @@ class RequestController extends Controller
     }
 
     /**
+     * Get job status
+     *
      * @param int $jobStatusId
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function status(int $jobStatusId)
     {
-        if (!$status = Status::where('id', $jobStatusId)->first()) {
-            return response('not found', 404);
+        if (!$status = StatusModel::where('id', $jobStatusId)->first()) {
+            return response('', 404)->json(['message' => 'Not found']);
         }
 
         $result = [
             'status' => $status->status
         ];
 
-        if ($response = Response::where('job_status_id', $status->id)->first()) {
+        if ($response = ResponseModel::where('job_status_id', $status->id)->first()) {
             $result['response'] = $response->response;
         }
-
 
         return response()->json($result);
     }

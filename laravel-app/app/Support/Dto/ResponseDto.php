@@ -1,12 +1,27 @@
 <?php
 
 
-namespace App\Support;
+namespace App\Support\Dto;
 
+/**
+ * Class ResponseDto
+ * @package App\Support\Dto
+ */
 class ResponseDto extends SimpleDataTransferObject
 {
+    /**
+     * @var string
+     */
     public string $statusCode;
+
+    /**
+     * @var string
+     */
     public string $body;
+
+    /**
+     * @var array
+     */
     public array $headers;
 
     /**

@@ -2,9 +2,9 @@
 
 namespace App\Jobs;
 
-use App\Models\Response;
-use App\Support\RequestDto;
-use App\Support\ResponseDto;
+use App\Models\Response as ResponseModel;
+use App\Support\Dto\RequestDto;
+use App\Support\Dto\ResponseDto;
 use GuzzleHttp\Exception\BadResponseException;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -62,7 +62,7 @@ class ProcessRequestJob implements ShouldQueue
             return;
         }
 
-        $responseModel                = new Response();
+        $responseModel                = new ResponseModel();
         $responseModel->job_status_id = $this->getJobStatusId();
         $responseModel->response      = (new ResponseDto())
             ->setStatusCode($response->getStatusCode())

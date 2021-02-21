@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::any('process/{uri}', [\App\Http\Controllers\RequestController::class, 'process'])
+    ->where('uri', '.*');
+
+Route::get('status/{jobStatusId}', [\App\Http\Controllers\RequestController::class, 'status']);
