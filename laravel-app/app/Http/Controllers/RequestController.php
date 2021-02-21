@@ -28,7 +28,7 @@ class RequestController extends Controller
 
         dispatch($job);
 
-        return response()->json(['jobId' => $job->getJobStatusId()]);
+        return response()->json(['jobStatusId' => $job->getJobStatusId()]);
     }
 
     /**
@@ -37,7 +37,7 @@ class RequestController extends Controller
      */
     public function status(int $jobStatusId)
     {
-        if (!$status = Status::where('job_id', $jobStatusId)->first()) {
+        if (!$status = Status::where('id', $jobStatusId)->first()) {
             return response('not found', 404);
         }
 
