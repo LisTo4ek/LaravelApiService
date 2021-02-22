@@ -41,3 +41,7 @@ Please note that there is ability to setup webhooks for each job. To do it you n
 ```
 Where `m` - is HTTP method and `u` is the URl of your webhook
 
+### ToDo ###
+* Add logging
+* Think about encrypting requests in queue storage because requests can contain security staff
+* Improve `/api/status/{jobStatusId}` endoint to display webhooks triggering information
