@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
-Route::any('process/{uri}', [\App\Http\Controllers\RequestController::class, 'process'])
+Route::any('process/{uri}', [RequestController::class, 'process'])
     ->where('uri', '.*');
 
-Route::get('status/{jobStatusId}', [\App\Http\Controllers\RequestController::class, 'status']);
+Route::get('status/{jobStatusId}', [RequestController::class, 'status']);
+
+// TODO: Created for demo purpose only. Remove after demo.
+Route::any('test/{status}', [RequestController::class, 'test']);
+
+//
+//Route::any('qqq/{method}/{uri}', [RequestController::class, 'qqq'])
+//    ->where('method', '[^/]+')
+//    ->where('uri', '.*');

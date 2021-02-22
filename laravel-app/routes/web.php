@@ -12,8 +12,3 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::any('process/{uri}', [\App\Http\Controllers\RequestController::class, 'process'])
-    ->where('uri', '.*');
-
-Route::get('status/{jobStatusId}', [\App\Http\Controllers\RequestController::class, 'status']);

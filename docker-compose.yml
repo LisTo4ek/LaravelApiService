@@ -61,7 +61,7 @@ services:
 networks:
   laravel-api001-app-network:
     driver: bridge
-    
+
 #Volumes
 volumes:
   laravel-api001-dbdata:

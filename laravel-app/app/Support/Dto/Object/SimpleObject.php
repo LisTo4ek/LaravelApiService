@@ -1,16 +1,18 @@
 <?php
 
+namespace App\Support\Dto\Object;
 
-namespace App\Support\Dto;
-
+use App\Support\Json;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
 use \ReflectionClass;
 use \ReflectionProperty;
 
 /**
- * Class SimpleDataTransferObject
- * @package App\Support\Dto
+ * Class SimpleObject
+ * @package App\Support\Dto\Object
  */
-abstract class SimpleDataTransferObject
+abstract class SimpleObject implements Arrayable, Jsonable
 {
     /**
      * SimpleDataTransferObject constructor.
@@ -32,7 +34,7 @@ abstract class SimpleDataTransferObject
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         $class = new ReflectionClass(static::class);
 
@@ -44,5 +46,14 @@ abstract class SimpleDataTransferObject
         }
 
         return $response;
+    }
+
+    /**
+     * @param int $options
+     * @return string
+     */
+    public function toJson($options = 0): string
+    {
+        return Json::encode($this->toArray(), $options);
     }
 }

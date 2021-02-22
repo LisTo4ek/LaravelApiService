@@ -1,12 +1,11 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\Jobs\ProcessRequestJob;
 use App\Models\Response as ResponseModel;
 use App\Models\Status as StatusModel;
-use App\Support\Dto\RequestDto;
+use App\Support\Dto\Forge\Request AS RequestDtoForge;
 use Illuminate\Http\Request;
 
 class RequestController extends Controller
@@ -20,12 +19,7 @@ class RequestController extends Controller
      */
     public function process(string $uri, Request $request)
     {
-        $requestDto = (new RequestDto())
-            ->setMethod($request->getMethod())
-            ->setUri($uri)
-            ->setParams($request->header())
-            ->setHeaders($request->all())
-            ->setIps($request->getClientIps());
+        $requestDto = RequestDtoForge::fromHttpRequest($request)->setUri($uri);
 
         $job = (new ProcessRequestJob($requestDto->toArray()))->onQueue('requests');
 
@@ -43,7 +37,7 @@ class RequestController extends Controller
     public function status(int $jobStatusId)
     {
         if (!$status = StatusModel::where('id', $jobStatusId)->first()) {
-            return response('', 404)->json(['message' => 'Not found']);
+            return response()->json(['message' => 'Not found'], 404);
         }
 
         $result = [
@@ -55,5 +49,24 @@ class RequestController extends Controller
         }
 
         return response()->json($result);
+    }
+
+    /**
+     * @param int $status
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * @todo This method created for demo purpose only
+     */
+    public function test(int $status, Request $request)
+    {
+        $r = [
+            'method' => $request->getMethod(),
+            'uri' => $request->getUri(),
+            'parameters' => $request->all(),
+            'headers' => $request->header(),
+            'body' => $request->getContent(),
+        ];
+
+        return response()->json($r, $status);
     }
 }
