@@ -27,7 +27,4 @@ Route::get('status/{jobStatusId}', [RequestController::class, 'status']);
 // TODO: Created for demo purpose only. Remove after demo.
 Route::any('test/{status}', [RequestController::class, 'test']);
 
-//
-//Route::any('qqq/{method}/{uri}', [RequestController::class, 'qqq'])
-//    ->where('method', '[^/]+')
-//    ->where('uri', '.*');
+

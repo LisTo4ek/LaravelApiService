@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Jobs\ProcessRequestJob;
 use App\Models\Response as ResponseModel;
 use App\Models\Status as StatusModel;
-use App\Support\Dto\Forge\Request AS RequestDtoForge;
+use App\Support\Dto\Forge\Request as RequestDtoForge;
 use Illuminate\Http\Request;
 
 class RequestController extends Controller
@@ -60,11 +60,11 @@ class RequestController extends Controller
     public function test(int $status, Request $request)
     {
         $r = [
-            'method' => $request->getMethod(),
-            'uri' => $request->getUri(),
+            'method'     => $request->getMethod(),
+            'uri'        => $request->getUri(),
             'parameters' => $request->all(),
-            'headers' => $request->header(),
-            'body' => $request->getContent(),
+            'headers'    => $request->header(),
+            'body'       => $request->getContent(),
         ];
 
         return response()->json($r, $status);
