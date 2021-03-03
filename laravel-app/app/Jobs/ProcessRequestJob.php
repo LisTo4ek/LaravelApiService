@@ -2,12 +2,10 @@
 
 namespace App\Jobs;
 
-use App\Models\Response as ResponseModel;
-use App\Support\Dto\Forge\Request as RequestDtoForge;
 use App\Support\Dto\Object\Request as RequestDto;
 use App\Support\Dto\Object\Response as ResponseDto;
 use App\Support\Dto\Object\Webhook as WebhookDto;
-use App\Support\Headers;
+use App\Support\Headers as HeadersHelper;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -50,25 +48,20 @@ class ProcessRequestJob implements ShouldQueue
     public function handle()
     {
         $requestDto = new RequestDto($this->request);
+        $response   = Http::send(
+            $requestDto->getMethod(),
+            $requestDto->getUri(),
+            $this->getRequestOptions($requestDto)
+        );
 
-        try {
-
-            $response = Http::send(
-                $requestDto->getMethod(),
-                $requestDto->getUri(),
-                $this->getRequestOptions($requestDto)
-            );
-        } catch (\Exception $e) {
-            $this->fail($e);
-            return;
+        if ($response->serverError()) {
+            $response->throw();
         }
 
         $responseDto = (new ResponseDto())
             ->setStatusCode($response->status())
             ->setBody($response->body())
-            ->setHeaders(Headers::process($response->headers()));
-
-        $this->saveResponse($responseDto);
+            ->setHeaders(HeadersHelper::process($response->headers()));
 
         $this->setOutput($responseDto->toArray());
 
@@ -101,36 +94,30 @@ class ProcessRequestJob implements ShouldQueue
     }
 
     /**
-     * @param RequestDto $requestDto
+     * @param RequestDto  $requestDto
      * @param ResponseDto $responseDto
-     * @return void
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @return array
      */
-    private function processWebhooks(RequestDto $requestDto, ResponseDto $responseDto)
+    private function processWebhooks(RequestDto $requestDto, ResponseDto $responseDto): array
     {
-        if (!$webHooks = $requestDto->getWebHooks()) {
-            return;
-        }
+        $jobStatusIds = [];
 
-        $response = $responseDto->toArray();
+        if (!$webHooks = $requestDto->getWebHooks()) {
+            return $jobStatusIds;
+        }
 
         foreach ($webHooks as $webHookData) {
             $webhookDto = new WebhookDto($webHookData);
-            $job        = (new ProcessWebhookJob(['webhook' => $webhookDto->toArray(), 'response' => $response]))->onQueue('webhooks');
+            $job        = (new ProcessWebhookJob([
+                ProcessWebhookJob::SECTION_WEBHOOK  => $webhookDto->toArray(),
+                ProcessWebhookJob::SECTION_RESPONSE => $responseDto->toArray()
+            ]))->onQueue(JobQueue::WEBHOOKS);
 
             dispatch($job);
+
+            $jobStatusIds[] = $job->getJobStatusId();
         }
-    }
 
-    /**
-     * @param ResponseDto $responseDto
-     */
-    private function saveResponse(ResponseDto $responseDto)
-    {
-        $responseModel                = new ResponseModel();
-        $responseModel->job_status_id = $this->getJobStatusId();
-        $responseModel->response      = $responseDto->toArray();
-
-        $responseModel->save();
+        return $jobStatusIds;
     }
 }

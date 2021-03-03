@@ -12,7 +12,7 @@ use \ReflectionProperty;
  * Class SimpleObject
  * @package App\Support\Dto\Object
  */
-abstract class SimpleObject implements Arrayable, Jsonable
+abstract class GenericObject implements Arrayable, Jsonable
 {
     /**
      * SimpleDataTransferObject constructor.

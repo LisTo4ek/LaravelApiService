@@ -11,7 +11,7 @@ use App\Support\Dto\Object\Components\Http\Uri;
  * Class Request
  * @package App\Support\Dto\Object
  */
-class Request extends SimpleObject
+class Request extends GenericObject
 {
     use Method, Uri, Body, Headers;
 
@@ -115,5 +115,13 @@ class Request extends SimpleObject
     {
         $this->webHooks[] = $webHook;
         return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isValid(): bool
+    {
+        return !(empty($this->getMethod()) || empty($this->getUri()));
     }
 }

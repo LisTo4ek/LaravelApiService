@@ -19,8 +19,7 @@ use App\Http\Controllers\RequestController;
 //    return $request->user();
 //});
 
-Route::any('process/{uri}', [RequestController::class, 'process'])
-    ->where('uri', '.*');
+Route::any('process', [RequestController::class, 'process']);
 
 Route::get('status/{jobStatusId}', [RequestController::class, 'status']);
 

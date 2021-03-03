@@ -10,7 +10,7 @@ use App\Support\Dto\Object\Components\Http\StatusCode;
  * Class Response
  * @package App\Support\Dto\Object
  */
-class Response extends SimpleObject
+class Response extends GenericObject
 {
     use StatusCode, Body, Headers;
 }

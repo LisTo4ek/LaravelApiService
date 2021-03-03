@@ -9,7 +9,7 @@ use App\Support\Dto\Object\Components\Http\Uri;
  * Class Webhook
  * @package App\Support\Dto\Object
  */
-class Webhook extends SimpleObject
+class Webhook extends GenericObject
 {
     use Method, Uri;
 
@@ -18,6 +18,6 @@ class Webhook extends SimpleObject
      */
     public function isValid(): bool
     {
-        return true;
+        return !(empty($this->getMethod()) || empty($this->getUri()));
     }
 }

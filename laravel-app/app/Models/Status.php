@@ -15,4 +15,11 @@ class Status extends Model
      * @var string
      */
     protected $primaryKey = 'id';
+
+    /**
+     * @var string[]
+     */
+    protected $casts = [
+        'output' => 'array',
+    ];
 }

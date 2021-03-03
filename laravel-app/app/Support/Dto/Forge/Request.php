@@ -6,7 +6,7 @@ use App\Support\Json;
 use Illuminate\Http\Request as HttpRequest;
 use App\Support\Dto\Object\Request as RequestDto;
 use App\Support\Dto\Forge\Webhook as WebhookForge;
-use App\Support\Headers;
+use App\Support\Headers as HeadersHelper;
 
 /**
  * Class Request
@@ -28,8 +28,13 @@ class Request
 
         $params  = $request->post();
         $body    = $request->getContent();
-        $headers = Headers::process($request->header());
+        $headers = HeadersHelper::process($request->header());
 
+        if (isset($headers['request-uri']) && $headers['request-uri']) {
+            $requestDto->setUri($headers['request-uri']);
+
+            unset($headers['request-uri']);
+        }
 
         if (isset($headers['content-type']) && substr($headers['content-type'], 0, 20) === 'multipart/form-data;' && $params) {
             $requestDto->setFormParams($params);
