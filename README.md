@@ -1,7 +1,16 @@
-# LaravelApiService
+# LaravelApiService (LAS)
 
 A HTTP proxy-like service which retries requests on failure for a specific amount of attempts with a specific delay and returns responses to a specified webhook (also with retries).
 The role of the service - to smooth temporary unavailability of 3rd party services.
+
+## How it works.
+Imagine you need to make a call of https://some-service.com/api/rosource.
+
+You are sending request to LaravelApiService (LAS) mentioning `https://some-service.com/api/rosource` and some webhook to be triggered when request is successfully executed.
+A queue job is created at LAS. LAS will try to access `https://some-service.com/api/rosource`.
+If `https://some-service.com/api/rosource` is unavailable or its response code is >= 500 then LAS makes another attempt after 60 seconds.
+LAS will make up 15 attempts if needed. If response is successful then another job will be created to trigger webhook.
+Webhooks will be handled the same way as queue jobs.
 
 ## Setup
 * Start docker: Navigate to project folder
@@ -70,6 +79,8 @@ Please check video: https://drive.google.com/file/d/13I45mDlY5XJdjO8qae94HHrV7JP
 
 ## ToDo ##
 * Add logging
-* Think about encrypting requests in queue storage because requests can contain security staff
+* Think about encrypting requests in queue storage because requests can contain security stuff
 * Improve `/api/status/{jobStatusId}` endpoint to display webhooks triggering information
 * Think about using Redis or RabbitMQ instead of database for queues
+* Use Supervisor process manager to run queue handler job
+* Implement this service using Nodejs or Go 
