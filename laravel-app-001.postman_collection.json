@@ -64,13 +64,13 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "test-header-post",
-						"value": "abc",
+						"key": "request-uri",
+						"value": "https://webhook.site/7eaf9d0b-860e-4d91-9ec2-a72adf2e2051?t=request",
 						"type": "text"
 					},
 					{
 						"key": "webhooks",
-						"value": "[{\"m\": \"GET\", \"u\": \"http://laravel-api001-webserver/api/test/409\"},{\"m\": \"GET\", \"u\": \"http://laravel-api001-webserver/api/test/200\"},{\"m\": \"GET\", \"u\": \"http://laravel-api001-webserver/api/test/500\"}]",
+						"value": "[{\"m\": \"GET\", \"u\": \"https://webhook.site/7eaf9d0b-860e-4d91-9ec2-a72adf2e2051?t=webhook\"}]",
 						"type": "text"
 					}
 				],
@@ -84,7 +84,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://0.0.0.0:8083/api/process/http://laravel-api001-webserver/api/test/404?queryParam=1",
+					"raw": "http://0.0.0.0:8083/api/process/",
 					"protocol": "http",
 					"host": [
 						"0",
@@ -96,18 +96,7 @@
 					"path": [
 						"api",
 						"process",
-						"http:",
-						"",
-						"laravel-api001-webserver",
-						"api",
-						"test",
-						"404"
-					],
-					"query": [
-						{
-							"key": "queryParam",
-							"value": "1"
-						}
+						""
 					]
 				}
 			},
